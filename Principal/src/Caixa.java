@@ -22,11 +22,11 @@ class Caixa extends Thread {
                 // Região crítica: aguardar ou obter um cliente da fila de forma sincronizada
                 synchronized (fila) {
                     // Espera enquanto a fila estiver vazia e ainda houver clientes por chegar
-                    while (fila.isEmpty() && Principal.aberto) {
+                    while (fila.isEmpty() && Main.aberto) {
                         fila.wait();  // aguarda notificação de novo cliente ou fim das chegadas
                     }
                     // Se a fila está vazia e não virão mais clientes, encerra o loop (fecha o caixa)
-                    if (fila.isEmpty() && !Principal.aberto) {
+                    if (fila.isEmpty() && !Main.aberto) {
                         break;
                     }
                     // Remove o próximo cliente da fila para atendimento

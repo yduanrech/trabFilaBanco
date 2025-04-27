@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Principal {
+public class Main {
     // Flag estática indicando se o gerador de clientes ainda está ativo (true = ainda podem chegar clientes)
     public static volatile boolean aberto = true;
     // Duração total da simulação de pico (11h às 13h = 2 horas = 7200 segundos simulados)

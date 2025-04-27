@@ -39,7 +39,7 @@ class GeradorClientes extends Thread {
         } finally {
             // Indica que não haverá mais chegadas de clientes e desperta todos os caixas possivelmente esperando
             synchronized (fila) {
-                Principal.aberto = false;
+                Main.aberto = false;
                 fila.notifyAll();
             }
         }
